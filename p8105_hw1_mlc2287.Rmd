@@ -1,21 +1,42 @@
 ---
-title: "Simple document"
+title: "Homework 1"
+author: "Mingee Choi"
 output: html_document
 ---
 
-I'm an R Markdown document! 
 
-# Section 1
+# Problem 1
 
-Here's a **code chunk** that samples from 
-a _normal distribution_:
-
+To find basic description of dataset:
 ```{r}
-samp = rnorm(100)
-length(samp)
+data("penguins", package = "palmerpenguins")
+summary(penguins)
+```
+To find size of the dataset (nrow and ncol):
+```{r}
+x=data.frame(penguins)
+y=data.frame(penguins)
+nrow(x)
+ncol(y)
 ```
 
-# Section 2
+**Description of dataset:**
+*variable names: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year
+*Values of important variables: 
+  *Sex: female=165, male=168
+  *Species: Adelie=152, Chinstrap=68, Gentoo=124
+  *Island: Biscoe=168, Dream=124, Torgersen=52
+  *Means: Bill Length (mm)=43.92, Bill Depth (mm)=17.15, Body Mass (g)=4202
+  *Median: Bill Length (mm)=44.45, Bill Depth (mm)=17.30, Body Mass (g)=4050
+*Rows=334 and Columns=8
+*Mean flipper length:200.9
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+####Scatterplot of flipper length vs bill length
+To make scatterplot with species in different colors:
+```{r}
+library(tidyverse)
+ggplot(penguins, aes(x=flipper_length_mm, y=bill_length_mm))+geom_point(aes(color=species))
+ggsave("scatter_plot.pdf")
+```
+
+# Problem 2
