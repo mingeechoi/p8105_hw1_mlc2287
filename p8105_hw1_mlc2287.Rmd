@@ -34,7 +34,7 @@ ncol(y)
 
 ####Scatterplot of flipper length vs bill length
 To make scatterplot with species in different colors:
-```{r plot_problem2, message=FALSE}
+```{r plot_problem2, warning=FALSE, message=FALSE}
 library(tidyverse)
 ggplot(penguins, aes(x=flipper_length_mm, y=bill_length_mm))+geom_point(aes(color=species))
 ggsave("scatter_plot.pdf")
@@ -45,10 +45,27 @@ Creating a dataframe
 ```{r}
 problem2_df = tibble(
   a=rnorm(n=10),
-  result <- a>0,
-  vec_char = c("Here", "Is", "A", "Character", "Vector", "For", "Homework", "1", "Problem", "2"),
+  vec_logical <- a>0,
+  vec_char = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"),
   vec_factor = factor(c(1,2,3,1,2,3,1,2,3,1)),
 )
   problem2_df
-  
 ```
+
+Taking the mean of each variable in my dataframe:
+```{r, warning=FALSE}
+ mean('a')
+ mean('vec_logical')
+ mean('vec_char')
+ mean('vec_factor')
+```
+Finding the mean of a random sample of size 10 from a standard normal distribution (a) works, but finding the mean of the logical vector, character vector, and factor vector doesn't work.
+
+```{r, results='hide', warning=FALSE, message=FALSE}
+as.numeric('vec_char')
+as.numeric('vec_logical')
+as.numeric('vec_factor')
+```
+Numerical values are assigned to the different vectors. The logical vector takes a value of 1 ("True") or 0 ("False"). The character vector takes on values from 1-10, and the factor vector takes on values I assigned. Since I can only take the mean of numerical values, this explains why I couldn't take the mean of the logical, character, and factor values before I converted them into numerical values. 
+
+
