@@ -1,7 +1,8 @@
 ---
 title: "Homework 1"
 author: "Mingee Choi"
-output: html_document
+date: 09/24/2022
+output: github_document
 ---
 
 
@@ -33,10 +34,16 @@ ncol(y)
 
 ####Scatterplot of flipper length vs bill length
 To make scatterplot with species in different colors:
-```{r}
+```{r plot_problem2, message=FALSE}
 library(tidyverse)
 ggplot(penguins, aes(x=flipper_length_mm, y=bill_length_mm))+geom_point(aes(color=species))
 ggsave("scatter_plot.pdf")
 ```
 
 # Problem 2
+Creating a dataframe
+```{r}
+problem2_df = tibble(
+  sample(10)
+)
+```
