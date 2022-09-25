@@ -25,6 +25,7 @@ ncol(y)
 * variable names: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year
 
 * Values of important variables: 
+
   *Sex: female=165, male=168
   
   *Species: Adelie=152, Chinstrap=68, Gentoo=124
@@ -37,7 +38,7 @@ ncol(y)
   
 *Rows=334 and Columns=8
 
-*Mean flipper length:200.9
+*Mean flipper length: 200.9
 
 **Scatterplot of flipper length vs bill length**
 To make scatterplot with species in different colors:
@@ -57,8 +58,10 @@ problem2_df = tibble(
   vec_factor = factor(c(1,2,3,1,2,3,1,2,3,1)),
 )
   problem2_df
-  
-#Taking the mean of each variable in my dataframe:
+```
+
+Taking the mean of each variable in my dataframe:
+```{r, warning=FALSE}
 mean(problem2_df$norm_samp)
 mean(problem2_df$vec_char)
 mean(problem2_df$vec_logical)
