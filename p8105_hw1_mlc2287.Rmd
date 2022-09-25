@@ -22,6 +22,7 @@ ncol(y)
 ```
 
 **Description of dataset:**
+
 * variable names: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year
 
 * Values of important variables: 
@@ -67,13 +68,13 @@ mean(problem2_df$vec_char)
 mean(problem2_df$vec_logical)
 mean(problem2_df$vec_factor)
 ```
-Finding the mean of a random sample of size 10 from a standard normal distribution (a) works, but finding the mean of the logical vector, character vector, and factor vector doesn't work.
+I was able to find the mean of my random sample of size 10 from a standard normal distribution (norm_samp). However, I wasn't able to find the mean of the logical vector, character vector, and factor vector (warning message: "argument is not numeric or logical")
 
 ```{r, results='hide', warning=FALSE, message=FALSE}
 as.numeric(problem2_df$vec_char)
 as.numeric(problem2_df$vec_logical)
 as.numeric(problem2_df$vec_factor)
 ```
-Numerical values are assigned to the different vectors. The logical vector takes a value of 1 ("True") or 0 ("False"). The character vector takes on values from 1-10, and the factor vector takes on values I assigned. Since I can only take the mean of numerical values, this explains why I couldn't take the mean of the logical, character, and factor values before I converted them into numerical values. 
+Numerical values were assigned to the different vectors. The logical vector took a value of 1 ("True") or 0 ("False"). The character vector took on values from 1-10, and the factor vector took on the values I assigned. Since I can only take the mean of numerical values, this explains why I couldn't take the mean of the logical, character, and factor values before I converted them into numerical values. 
 
 
