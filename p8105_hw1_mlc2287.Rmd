@@ -44,6 +44,11 @@ ggsave("scatter_plot.pdf")
 Creating a dataframe
 ```{r}
 problem2_df = tibble(
-  sample(10)
+  a=rnorm(n=10),
+  result <- a>0,
+  vec_char = c("Here", "Is", "A", "Character", "Vector", "For", "Homework", "1", "Problem", "2"),
+  vec_factor = factor(c(1,2,3,1,2,3,1,2,3,1)),
 )
+  problem2_df
+  
 ```
